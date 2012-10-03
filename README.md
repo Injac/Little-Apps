@@ -7,6 +7,8 @@ This repository is a collection of small applications, scripts and resources tha
 * **englishwords.txt** - a full English word list I've built from other word lists
 * **Passcode.java** - a simple Java command line to check if a four digit passcode is based on a specific four letter word
 * **snow.js** - a JS script that adds falling snow to a page
+* **Sorting.java** - some sorting algorithms implemented in Java
+* **stringword.py** - a Python script that compresses words between strings and numeric representations
 * **windowcenter.scpt** - a simple AppleScript for centering windows horizontaly on the screen
 
 
