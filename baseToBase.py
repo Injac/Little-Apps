@@ -3,6 +3,7 @@
 #Or 0123456789AB for duodecimal or even 0123456789abcdef for hex
 
 def baseToBase(originalNumber, originalBase, newBase):
+	originalNumber = str(originalNumber)
 	numberAsInteger = 0
 	for n in range(0, len(originalNumber)):
 		numberAsInteger = (numberAsInteger * len(originalBase)) + int(originalBase[originalBase.find(originalNumber[n])])
