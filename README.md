@@ -6,6 +6,7 @@ This repository is a collection of small applications, scripts and resources tha
 * **boggle.java** - a simple command line java app for cheating at Boggle - requires englishwords.txt (you could adapt to other languages but change some of the code first)
 * **englishwords.txt** - a full English word list I've built from other word lists
 * **Passcode.java** - a simple Java command line to check if a four digit passcode is based on a specific four letter word
+* **snow.js** - a JS script that adds falling snow to a page
 * **windowcenter.scpt** - a simple AppleScript for centering windows horizontaly on the screen
 
 
