@@ -27,6 +27,7 @@
 			document.body.appendChild(canvas);
 
 			var start = Date.now();
+			var fps = 0;
 
 			var baseX, ballX, ballY, ballXVelocity, ballYVelocity, ballXAcceleration, ballYAcceleration, baseY;
 			
@@ -49,6 +50,8 @@
 				ballX = Math.max(0, Math.min(300, ballX));
 
 				if (ballX <= 0 || ballX >= 300) ballXVelocity = 0;
+
+				fps = 1000 / diff;
 
 				draw();
 
@@ -103,7 +106,7 @@
 
 			function drawBall() {
 				ctx.save();
-				ctx.translate(ballX + 10, 230 - baseY);
+				ctx.translate(ballX + 10, ballY + 230 - baseY);
 				ctx.rotate((ballX / 20 * Math.PI));
 				ctx.translate(-10, -10);
 				ctx.strokeStyle = "red";
@@ -126,7 +129,7 @@
 				ctx.font = "20px sans-serif";
 				ctx.textBaseline = "top";
 				ctx.fillStyle = "white";
-				ctx.fillText(Math.floor(Math.max(0,ballY)).toString(), 10, 10);
+				ctx.fillText(Math.floor(Math.max(0,ballY)).toString() + " // " + fps.toString() + " fps", 10, 10);
 			}
 
 			function sizeCanvas() {
@@ -174,7 +177,7 @@
 				ballXVelocity = 0;
 				ballYVelocity = 0;
 				ballXAcceleration  = 0;
-				ballYAcceleration = 0.25;
+				ballYAcceleration = 100;
 
 				playing = true;
 
