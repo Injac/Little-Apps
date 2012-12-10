@@ -18,6 +18,12 @@ def arrayFromBlock(block):
 		createdArray.append(s.replace("\"", "").strip())
 	return createdArray
 
+#Assume an example is being fed to the function (note that the file is already split at @ symbols)
+#zone
+#{
+#	name = "zone_name",
+#	neighbours = ["neighbour1", "neighbour2", "neighbour3"]
+#}
 def dictionaryFromBlock(block):
 	#Create a dictionary to return
 	dict = {}
@@ -27,19 +33,32 @@ def dictionaryFromBlock(block):
 	block = block[block.find("{") + 1: block.rfind("}") - 1].strip()
 	#Split at each equal sign
 	splitAtEquals = block.split("=")
+	#The value of the array is now the following:
+	#'name', '"zone_name",\nneighours','["neighbour1", "neighbour2", "neighbour3"]'
 	newSplit = []
 	#Iterate over each block to build the split array and appropriately group arrays
 	for n in range(0, len(splitAtEquals)):
+		#This gets rid of surrounding whitespace (so ' name ' becomes 'name')
 		splitAtEquals[n] = splitAtEquals[n].strip()
+		#I.e. if the value being examined couldn't be an array value
 		if "[" not in splitAtEquals[n]:
+			#Split at a new line so zone_name\nneighbours -> 'zone_name', 'neighbours'
 			splitAtNewLine = splitAtEquals[n].split("\n")
+			#Add the split values to the new array
 			for l in splitAtNewLine:
 				newSplit.append(l.strip())
+		#Else If this is not the final value in the array (because it contains a [ or ])
 		elif n != len(splitAtEquals) - 1:
+			#At this stage something like '"station",\n"neighbour"' becomes 'station', '\nneighbour'
+			#Seperate at the very last comma (which, if this is an array value, will be after the array)
 			newSplit.append(splitAtEquals[n][0:splitAtEquals[n].rfind(",")].strip())
+			#Split everything after the comman
 			newSplit.append(splitAtEquals[n][splitAtEquals[n].rfind(",")+1:len(splitAtEquals[n])].strip())
 		else:
+			#Otherwise just add the contents
 			newSplit.append(splitAtEquals[n])
+	#If the above loop isn't making much sense it is probably worth uncommenting the print() calls so you can examine
+	#the array at different stages to understand how it is getting built
 	#Build the dictionary
 	for n in range(0, len(newSplit), 2):
 		if n + 1 < len(newSplit):
@@ -73,7 +92,7 @@ stationZones = {}
 zoneCosts = {}
 
 #Iterate over the zones
-for zBlock in zoneBlocks
+for zBlock in zoneBlocks:
 	#Ignore whitespace
 	if zBlock != "":
 		#Get a dictionary from the block
