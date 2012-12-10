@@ -51,7 +51,7 @@
 
 				if (ballX <= 0 || ballX >= 300) ballXVelocity = 0;
 
-				fps = 1000 / diff;
+				//fps = 1000 / diff;
 
 				draw();
 
@@ -161,6 +161,7 @@
 
 			function onDeviceMotion(event) {
 				ballXAcceleration = event.acclerationIncludingGravity.x;
+				fps = Math.floor(event.acclerationIncludingGravity.x).toString();
 			}
 
 			function create() {
