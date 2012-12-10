@@ -5,6 +5,69 @@
 		<style type="text/css">
 			body {
 				font-family:sans-serif;
-				background-color:black;
+				background-color:white;
+				margin:0;
+				padding:0;
+				overflow: hidden;
+				text-align:center;
+			}
+			canvas {
+				margin:auto;
 			}
 		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var canvas = document.createElement("canvas");
+			var ctx = canvas.getContext("2d");
+			document.body.appendChild(canvas);
+
+			var start = Date.now();
+
+			var ballX = 0;
+
+			//Mozilla's implementation fo multi-browser requestAnimationFrame
+			(function() {
+				var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+				window.requestAnimationFrame = requestAnimationFrame;
+			})();
+
+			function update(time) {
+				var diff = time - start;
+
+				ballX = time % 10000 / 10000;
+
+				draw();
+				requestAnimationFrame(update);
+			}
+
+			function draw() {
+				//Clear the canvas
+				sizeCanvas();
+
+				ctx.fillStyle = "red";
+				ctx.fillRect(0,0, canvas.width, canvas.height);
+
+				ctx.fillStyle = "black";
+				ctx.fillRect(ballX * canvas.width,300,2,2);
+			}
+
+			function sizeCanvas() {
+				var winWidth = window.innerWidth;
+				var winHeight = window.innerHeight;
+				if (winWidth / winHeight > 2.0 / 3.0) {
+					canvas.height = winHeight;
+					canvas.width = 2.0 / 3.0 * winHeight
+				}
+				else {
+					canvas.width = winWidth;
+					canvas.height = 3.0 / 2.0 * winWidth;
+				}
+			}
+
+			//Begin the animation routine
+			requestAnimationFrame(update);
+
+		</script>
+	</body>
+</html>
