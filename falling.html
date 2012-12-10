@@ -160,8 +160,8 @@
 			}
 
 			function onDeviceMotion(event) {
-				ballXAcceleration = event.acclerationIncludingGravity.x;
-				fps = event.acclerationIncludingGravity.y.toString();
+				ballXAcceleration = event.accelerationIncludingGravity.x;
+				fps = ballXAcceleration.toString();
 			}
 
 			function create() {
