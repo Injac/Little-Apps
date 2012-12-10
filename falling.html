@@ -29,6 +29,9 @@
 			var start = Date.now();
 			var fps = 0;
 
+			var barSpacing = 60;
+			var gapSpacing = 60;
+
 			var baseX, ballX, ballY, ballXVelocity, ballYVelocity, ballXAcceleration, ballYAcceleration, baseY;
 			
 			var playing = false;
@@ -44,6 +47,8 @@
 			function update(time) {
 				var diff = (time - start);
 
+				baseY += diff / 1000 * (10 + Math.floor(baseY / barSpacing / 200));
+
 				ballXVelocity += ballXAcceleration * diff / 1000;
 				ballX += ballXVelocity * diff / 1000;
 
@@ -51,13 +56,35 @@
 
 				if (ballX <= 0 || ballX >= 300) ballXVelocity = 0;
 
-				//fps = 1000 / diff;
+				var canFall = true;
+
+				for (var bar = Math.max(0, Math.floor(ballY / barSpacing) - 10); bar < Math.floor(baseY / barSpacing) + 10; bar++) {
+					if (ballY + 5 > bar * barSpacing && ballY + 5 < bar * barSpacing + 5 && (ballX < bars[bar] || ballX > bars[bar] + gapSpacing - 20)) canFall = false;
+					if (!canFall) break;
+				}
+
+				if (canFall) {
+					//Can fall, do fall
+					ballYVelocity += ballYAcceleration * diff / 1000;
+					ballYVelocity = Math.min(ballYVelocity, Math.max(50, ballY / barSpacing));
+					ballY += ballYVelocity * diff / 1000;
+				} else {
+					ballYVelocity = 0;
+				}
+
+				fps = 1000 / diff;
 
 				draw();
 
 				start = time;
 
+				playing = (ballY + 230 - baseY) > 0;
+
 				if (playing) requestAnimationFrame(update);
+				else {
+					alert("Game over with a score of " + Math.floor(Math.max(0,ballY / barSpacing)).toString());
+					create();
+				}
 			}
 
 			function draw() {
@@ -70,11 +97,9 @@
 				drawBars();
 				drawBall();
 				drawScore();
-
 			}
 
 			function drawBars() {
-
 				var lineStyles = ["#0f0", "#0ff", "#ff0", "#f0f", "#f00", "#00f"];
 
 				ctx.save();
@@ -85,20 +110,20 @@
 				ctx.shadowBlur = 5;
 				ctx.lineJoin = ctx.lineCap = "round";
 				ctx.beginPath();
-				for (var bar = Math.max(0, Math.floor(ballY / 30) - 9); bar < Math.min(5000, Math.floor(baseY / 30) + 9); bar++) {
+				for (var bar = Math.max(0, Math.floor(baseY / barSpacing) - 1 - Math.ceil(480 / barSpacing)); bar < Math.min(5000, Math.floor(baseY / barSpacing) + Math.ceil(480 / barSpacing) + 1); bar++) {
 					if (lineStyles[Math.floor(bar / 100) % lineStyles.length] != ctx.strokeStyle) {
 						ctx.stroke();
 						ctx.strokeStyle = ctx.shadowColor = lineStyles[Math.floor(bar / 100) % lineStyles.length];
 						ctx.beginPath();
 					}
-					ctx.moveTo(0, bar * 30);
-					ctx.lineTo(bars[bar], bar * 30);
-					ctx.lineTo(bars[bar], bar * 30 + 5);
-					ctx.lineTo(0, bar * 30 + 5);
-					ctx.moveTo(320, bar * 30);
-					ctx.lineTo(bars[bar] + 40, bar * 30);
-					ctx.lineTo(bars[bar] + 40, bar * 30 + 5);
-					ctx.lineTo(320, bar * 30 + 5);
+					ctx.moveTo(0, bar * barSpacing);
+					ctx.lineTo(bars[bar], bar * barSpacing);
+					ctx.lineTo(bars[bar], bar * barSpacing + 5);
+					ctx.lineTo(0, bar * barSpacing + 5);
+					ctx.moveTo(320, bar * barSpacing);
+					ctx.lineTo(bars[bar] + gapSpacing, bar * barSpacing);
+					ctx.lineTo(bars[bar] + gapSpacing, bar * barSpacing + 5);
+					ctx.lineTo(320, bar * barSpacing + 5);
 				}
 				ctx.stroke();
 				ctx.restore();
@@ -106,7 +131,7 @@
 
 			function drawBall() {
 				ctx.save();
-				ctx.translate(ballX + 10, ballY + 230 - baseY);
+				ctx.translate(ballX + 10, Math.min(460, ballY + 230 - baseY));
 				ctx.rotate((ballX / 20 * Math.PI));
 				ctx.translate(-10, -10);
 				ctx.strokeStyle = "red";
@@ -129,7 +154,7 @@
 				ctx.font = "20px sans-serif";
 				ctx.textBaseline = "top";
 				ctx.fillStyle = "white";
-				ctx.fillText(Math.floor(Math.max(0,ballY)).toString() + " // " + fps.toString() + " fps", 10, 10);
+				ctx.fillText(Math.floor(Math.max(0,ballY / barSpacing)).toString() + " // " + Math.floor(fps).toString() + " fps", 10, 10);
 			}
 
 			function sizeCanvas() {
@@ -139,8 +164,7 @@
 				if (winWidth / winHeight > 2.0 / 3.0) {
 					canvas.height = winHeight;
 					canvas.width = 2.0 / 3.0 * winHeight
-				}
-				else {
+				} else {
 					canvas.width = winWidth;
 					canvas.height = 3.0 / 2.0 * winWidth;
 				}
@@ -150,8 +174,8 @@
 			}
 
 			function onKeyDown(event) {
-				if (event.which == 37 || event.keyCode == 37) ballXAcceleration = -20;
-				else if (event.which == 39 || event.keyCode == 39) ballXAcceleration = 20;
+				if (event.which == 37 || event.keyCode == 37) ballXAcceleration = -320;
+				else if (event.which == 39 || event.keyCode == 39) ballXAcceleration = 320;
 				console.log("Key down");
 			}
 
@@ -160,8 +184,7 @@
 			}
 
 			function onDeviceMotion(event) {
-				ballXAcceleration = event.accelerationIncludingGravity.x;
-				fps = ballXAcceleration.toString();
+				ballXAcceleration = event.accelerationIncludingGravity.x * 10;
 			}
 
 			function create() {
@@ -174,16 +197,16 @@
 				baseY = 0;
 				baseX = 0;
 				ballX = 0;
-				ballY = -100;
+				ballY = 0;
 				ballXVelocity = 0;
 				ballYVelocity = 0;
 				ballXAcceleration  = 0;
-				ballYAcceleration = 100;
+				ballYAcceleration = 480;
 
 				playing = true;
 
 				for (var x = 0; x < 5000; x++) {
-					bars[x] = 30 + Math.random() * 260;
+					bars[x] = Math.random() * (320 - gapSpacing);
 				}
 
 				requestAnimationFrame(update)
