@@ -150,14 +150,27 @@ for sBlock in stationsBlocks:
 
 #Use these two lines if you want the user to enter their desired station
 #Remember that they must enter the exact text
-location = raw_input("Please enter your start station: ")
-target = raw_input("Please enter your end station: ")
+locationEntered = False
+targetEntered = False
 
-for station in  stationList:
-	if station.lower().find(location.lower()) == 0:
-		location = station
-	if station.lower().find(target.lower()) == 0:
-		target = station;
+location = ""
+target = ""
+
+while not locationEntered:
+	location = raw_input("Please enter your start station: ")
+	for station in  stationList:
+		if station.lower().find(location.lower()) == 0:
+			location = station
+			locationEntered = True
+			break
+
+while not targetEntered:
+	target = raw_input("Please enter your end station: ")
+	for station in  stationList:
+		if station.lower().find(target.lower()) == 0:
+			target = station
+			targetEntered = True
+			break
 
 #When testing I was randomly selecting stations, uncomment the top line to import choice to use these
 #location = choice(stationList)
