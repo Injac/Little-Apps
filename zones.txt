@@ -1,0 +1,140 @@
+@zone {
+    name = "zone1",
+    zone1 = "1.50",
+    zone2 = "1.90",
+    zone3 = "2.20",
+    zone4 = "2.70",
+    zone5 = "3.30",
+    stations = [
+        "Aldgate",
+        "Baker Street",
+        "Bank/Monument",
+        "Bayswater",
+        "Barbican",
+        "Blackfriars", 
+        "Bond Street",
+        "Cannon Street",
+        "Chancery Lane",
+        "Charing Cross",
+        "Covent Garden",
+        "Earl's Court",
+        "Edgware Road",
+        "Embankment",
+        "Euston",
+        "Euston Square",
+        "Farringdon",
+        "Gloucester Road",
+        "Goodge Street",
+        "Great Portland Street",
+        "Green Park",
+        "High Street Kensington",
+        "Holborn",
+        "Hyde Park Corner",
+        "King's Cross St. Pancras",
+        "Knightsbridge",
+        "Lancaster Gate",
+        "Leicester Square",
+        "Liverpool Street",
+        "Mansion House",
+        "Marble Arch",
+        "Marylebone",
+        "Moorgate",
+        "Notting Hill Gate",
+        "Oxford Circus",
+        "Paddington",
+        "Piccadilly Circus",
+	"Pimlico",
+        "Queensway",
+        "Regent's Park",
+        "Russell Square",
+        "Sloane Square",
+        "South Kensington",
+        "St. James's Park",
+        "St. Paul's", 
+        "Temple",
+        "Tottenham Court Road",
+        "Tower Hill",
+	"Vauxhall",
+        "Victoria",
+        "Warren Street",
+        "Westminster"
+    ]
+}
+
+@zone {
+    name = "zone2",
+    zone1 = "1.90",
+    zone2 = "0.90",
+    zone3 = "1.20",
+    zone4 = "1.70",
+    zone5 = "2.10",
+    stations = [
+        "Barons Court",
+	"Brixton",
+	"Caledonian Road",
+        "Finchley Road",
+        "Goldhawk Road",
+        "Hammersmith",
+	"Highbury & Islington",
+        "Holland Park",
+        "Kensal Green",
+        "Kensington (Olympia)",
+        "Kilburn",
+        "Kilburn Park", 
+        "Ladbroke Grove",
+        "Latimer Road",
+        "Maida Vale",
+        "Queen's Park",
+        "Royal Oak",
+        "Shepherd's Bush",
+        "St. John's Wood",
+	"Stockwell",
+        "Swiss Cottage",
+        "Warwick Avenue",
+        "West Hampstead",
+        "West Kensington",
+        "Westbourne Park"
+    ]
+}
+
+@zone {
+    name = "zone3",
+    zone1 = "2.20",
+    zone2 = "1.20",
+    zone3 = "0.90",
+    zone4 = "1.20",
+    zone5 = "1.70",
+    stations = [
+        "Dollis Hill",
+        "Neasden",
+        "Willesden Green", 
+        "Willesden Junction"
+    ]
+}
+
+@zone {
+    name = "zone4",
+    zone1 = "2.70",
+    zone2 = "1.70",
+    zone3 = "1.20",
+    zone4 = "0.90",
+    zone5 = "1.20",
+    stations = [
+        "Wembley Park",
+        "Kingsbury",
+        "Queensbury"
+    ]
+}
+
+@zone {
+    name = "zone5",
+    zone1 = "3.30",
+    zone2 = "2.10",
+    zone3 = "1.70",
+    zone4 = "1.20",
+    zone5 = "0.90",
+    stations = [
+        "Canons Park",
+        "Stanmore"
+    ]
+}

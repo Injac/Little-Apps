@@ -153,6 +153,12 @@ for sBlock in stationsBlocks:
 location = raw_input("Please enter your start station: ")
 target = raw_input("Please enter your end station: ")
 
+for station in  stationList:
+	if station.lower().find(location.lower()) == 0:
+		location = station
+	if station.lower().find(target.lower()) == 0:
+		target = station;
+
 #When testing I was randomly selecting stations, uncomment the top line to import choice to use these
 #location = choice(stationList)
 #target = choice(stationList)

@@ -1,0 +1,485 @@
+@station {
+  name = "Aldgate",
+    circle = ["Tower Hill", "Liverpool Street"],
+      metropolitan = ["Liverpool Street"] }
+
+@station {
+  name = "Baker Street",
+  bakerloo = ["Marylebone", "Regent's Park"],
+  circle = ["Edgware Road", "Great Portland Street"],
+  city = ["Edgware Road", "Great Portland Street"],
+  metropolitan = ["Finchley Road", "Great Portland Street"],
+  jubilee = ["St. John's Wood", "Bond Street"]
+}
+
+@station { 
+                name = "Bank/Monument",
+              circle = ["Tower Hill", "Cannon Street"],
+          district = ["Tower Hill", "Cannon Street"],
+      central = ["Liverpool Street", "St. Paul's"]
+}
+
+@station {
+  name = "Barbican",
+    circle = ["Farringdon", "Moorgate"],
+      city = ["Farringdon", "Moorgate"],
+        metropolitan = ["Farringdon", "Moorgate"]
+}
+
+@station { 
+  name       = "Barons Court",
+  piccadilly = ["Hammersmith", "Earl's Court"],
+  district   = ["Hammersmith", "West Kensington"]
+}
+
+@station {      name = "Bayswater",
+              circle = ["Paddington", "Notting Hill Gate"],
+            district = ["Paddington", "Notting Hill Gate"]
+         }
+
+@station { name = "Blackfriars", 
+           circle = ["Mansion House", "Temple"],
+           district = ["Mansion House", "Temple"]
+         }
+
+@station {
+  name = "Brixton"
+, victoria = [ "Stockwell" ]
+}
+
+@station {
+   central = ["Marble Arch", "Oxford Circus"],
+   jubilee = ["Baker Street", "Green Park"],
+   name = "Bond Street"
+}
+
+@station { name = "Caledonian Road", 
+	   piccadilly = [ "King's Cross St. Pancras" ] }
+
+@station 
+{
+name = "Cannon Street",
+circle = ["Bank/Monument", "Mansion House"],
+district = ["Bank/Monument", "Mansion House"]
+}
+
+@station {
+  name     = "Canons Park",
+  jubilee  = ["Stanmore", "Queensbury"]
+}
+
+@station { 
+    name        =       "Chancery Lane",
+    central     =       ["Holborn", "St. Paul's"]
+}
+
+@station {
+    name        = "Charing Cross",
+    bakerloo    = ["Embankment", "Piccadilly Circus"],
+    northern    = ["Embankment", "Leicester Square"]
+}
+
+@station {
+    name = "Covent Garden",
+      piccadilly = ["Leicester Square", "Holborn"]
+}
+
+@station {
+  name = "Dollis Hill",
+  jubilee = ["Neasden", "Willesden Green"]
+}
+
+@station
+{
+name       = "Earl's Court",
+piccadilly = ["Barons Court", "Gloucester Road"],
+district   = ["High Street Kensington", "West Kensington", "Gloucester Road", "Kensington (Olympia)"]
+}
+
+@station {
+  name     = "Edgware Road",
+  bakerloo = ["Paddington", "Marylebone"],
+  circle   = ["Baker Street", "Paddington"],
+  city     = ["Baker Street", "Paddington"],
+  district = ["Paddington"]
+} 
+
+@station { name = "Embankment",
+        circle = ["Westminster", "Temple"],
+        district = ["Westminster", "Temple"],
+        northern = ["Charing Cross"],
+        bakerloo = ["Charing Cross"]
+}
+
+@station {
+  name = "Euston",
+  northern = ["Warren Street", "King's Cross St. Pancras"],
+  victoria = ["Warren Street", "King's Cross St. Pancras"]
+}
+
+@station {
+  name = "Euston Square",
+  circle = ["Great Portland Street", "King's Cross St. Pancras"],
+    city = ["Great Portland Street", "King's Cross St. Pancras"],
+      metropolitan = ["Great Portland Street", "King's Cross St. Pancras"]
+}
+
+@station {
+  name = "Farringdon",
+  circle = ["King's Cross St. Pancras", "Barbican"],
+  city = ["King's Cross St. Pancras", "Barbican"],
+  metropolitan = ["King's Cross St. Pancras", "Barbican"]
+}
+
+@station {
+  name = "Finchley Road",
+  jubilee = ["West Hampstead", "Swiss Cottage"],
+  metropolitan = ["Wembley Park", "Baker Street"]
+}
+
+@station {      name = "Gloucester Road",
+                circle = ["High Street Kensington", "South Kensington"],
+                district = ["Earl's Court", "South Kensington"],
+                piccadilly = ["South Kensington", "Earl's Court"]
+         }
+
+@station {
+  name = "Goldhawk Road",
+  city = ["Hammersmith", "Latimer Road"]
+}
+
+@station {
+  name = "Goodge Street",
+  northern = ["Warren Street", "Tottenham Court Road"]
+}
+
+@station {
+  name = "Great Portland Street",
+    circle = ["Baker Street", "Euston Square"],
+      city = ["Baker Street", "Euston Square"],
+        metropolitan = ["Baker Street", "Euston Square"]
+}
+
+@station {
+    name = "Green Park",
+      piccadilly = ["Hyde Park Corner", "Piccadilly Circus"],
+          jubilee = ["Bond Street", "Westminster"],
+              victoria = ["Victoria", "Oxford Circus"]
+}
+
+@station {
+  piccadilly = ["Barons Court"],
+  district = ["Barons Court"],
+  city = ["Goldhawk Road"],
+  name = "Hammersmith"
+}
+
+@station {
+        name    =       "High Street Kensington",
+        circle  =       ["Notting Hill Gate", "Gloucester Road"],
+        district =      ["Notting Hill Gate", "Earl's Court"]
+}
+
+@station { 
+	name = "Highbury & Islington",
+	victoria = ["King's Cross St. Pancras"]
+}
+
+@station {
+    name = "Holborn",
+      piccadilly = ["Covent Garden", "Russell Square"],
+          central = ["Tottenham Court Road", "Chancery Lane"]
+}
+
+@station {
+    name = "Holland Park",
+    central = [ "Shepherd's Bush", "Notting Hill Gate" ]
+}
+
+@station {
+    name = "Hyde Park Corner",
+      piccadilly = ["Knightsbridge", "Green Park"]
+}
+
+@station {
+                name            =       "Kensal Green",
+                bakerloo        =       ["Queen's Park", "Willesden Junction" ]
+}
+
+@station {
+  name = "Kensington (Olympia)",
+  district = ["Earl's Court"]
+}
+
+@station {
+  name = "Kilburn",
+  jubilee = ["Willesden Green", "West Hampstead"]
+}
+
+@station { name = "Kilburn Park", 
+           bakerloo = ["Maida Vale", "Queen's Park"] }
+
+@station {
+  name     = "Kingsbury",
+  jubilee  = ["Queensbury", "Wembley Park"]
+}
+
+@station {
+  name = "King's Cross St. Pancras",
+  circle = ["Euston Square", "Farringdon"],
+  city = ["Euston Square", "Farringdon"],
+  metropolitan = ["Euston Square", "Farringdon"],
+  northern = ["Euston"],
+  piccadilly = ["Russell Square", "Caledonian Road"],
+  victoria = ["Highbury & Islington", "Euston"]
+}
+
+@station {
+    name = "Knightsbridge",
+      piccadilly = ["South Kensington", "Hyde Park Corner"]
+}
+
+@station {
+  name = "Ladbroke Grove",
+  city = ["Latimer Road", "Westbourne Park"]
+}
+
+@station {
+    name = "Lancaster Gate",
+    central = ["Queensway", "Marble Arch"]
+}
+
+@station {
+  name = "Latimer Road",
+  city = ["Goldhawk Road", "Ladbroke Grove"]
+}
+
+@station {
+    name             =         "Leicester Square",
+      piccadilly    =       ["Piccadilly Circus", "Covent Garden"],
+          northern   =   ["Tottenham Court Road", "Charing Cross"]
+}
+
+@station {
+  name = "Liverpool Street",
+  central = ["Bank/Monument"],
+  circle = ["Moorgate", "Aldgate"],
+  city = ["Moorgate"],
+  metropolitan = ["Moorgate", "Aldgate"]
+}
+
+@station 
+{
+    name        =       "Mansion House"
+,   circle      =       ["Cannon Street", "Blackfriars"]
+,   district    =       ["Cannon Street", "Blackfriars"]
+}
+
+@station { name = "Marble Arch",
+           central = [ "Lancaster Gate", "Bond Street" ]
+}
+
+@station {
+  name = "Maida Vale",
+  bakerloo = ["Warwick Avenue", "Kilburn Park"]
+}
+
+@station {
+        name = "Marylebone",
+        bakerloo = [ "Baker Street", "Edgware Road" ]
+                }
+
+@station 
+{
+  name = "Moorgate",
+  circle = ["Barbican", "Liverpool Street"],
+  city = ["Barbican", "Liverpool Street"],
+  metropolitan = ["Barbican", "Liverpool Street"]
+}
+
+@station {
+  name = "Neasden",
+  jubilee = ["Wembley Park", "Dollis Hill"]
+}
+
+@station {
+        name = "Notting Hill Gate",
+        circle = ["Bayswater", "High Street Kensington"],
+        district = ["Bayswater", "High Street Kensington"],
+        central = ["Holland Park", "Queensway"]
+}
+
+@station {
+    name        =       "Oxford Circus",
+    central     =       ["Bond Street", "Tottenham Court Road"],
+    victoria    =       ["Green Park", "Warren Street"],
+    bakerloo    =       ["Regent's Park", "Piccadilly Circus"]
+}
+
+@station {
+  name     = "Paddington",
+  bakerloo = ["Edgware Road", "Warwick Avenue"],
+  circle   = ["Edgware Road", "Bayswater"],
+  city     = ["Edgware Road", "Royal Oak"],
+  district = ["Edgware Road", "Bayswater"]
+}
+
+@station {
+    name             =         "Piccadilly Circus",
+      piccadilly     =       ["Green Park", "Leicester Square"],
+          bakerloo   =   ["Oxford Circus", "Charing Cross"]
+}
+
+@station  {
+  name 		= 	"Pimlico",
+  victoria	=	[ "Victoria", "Vauxhall" ]
+  }
+
+@station {
+  name     = "Queensbury",
+  jubilee  = ["Canons Park", "Kingsbury"]
+}
+
+@station {
+  name = "Queensway",
+  central = ["Notting Hill Gate", "Lancaster Gate"]
+}
+
+@station { name = "Queen's Park",
+           bakerloo = ["Kilburn Park", "Kensal Green" ] }
+
+@station { name = "Regent's Park",
+           bakerloo = [ "Baker Street",   "Oxford Circus" ] }
+
+@station {
+  name = "Royal Oak",
+  city = ["Paddington", "Westbourne Park"]
+}
+
+@station {
+    name = "Russell Square",
+      piccadilly = ["Holborn", "King's Cross St. Pancras"]
+}
+
+@station {
+  name = "Shepherd's Bush",
+  central = ["Holland Park"]
+}
+
+@station
+{ name = "Sloane Square"
+, circle        =       ["Victoria", "South Kensington"]
+,   district        =       ["Victoria", "South Kensington"]
+}
+
+@station
+{
+name = "South Kensington",
+  circle = ["Gloucester Road", "Sloane Square"],
+      district = ["Gloucester Road", "Sloane Square"],
+          piccadilly = ["Knightsbridge", "Gloucester Road"]
+}
+
+@station {
+  name     = "Stanmore",
+  jubilee  = ["Canons Park"]
+}
+
+@station
+{ name = "St. James's Park"
+, circle = ["Victoria", "Westminster"]
+, district = ["Victoria", "Westminster"]
+}
+
+@station {
+  name = "St. John's Wood",
+  jubilee = ["Swiss Cottage", "Baker Street"]
+}
+
+@station {
+	name = "Stockwell",
+	victoria = [ "Brixton", "Vauxhall" ]
+	}
+
+@station { name = "St. Paul's", 
+           central = ["Chancery Lane", "Bank/Monument"]
+}
+
+@station {
+  name = "Swiss Cottage",
+  jubilee = ["Finchley Road", "St. John's Wood"]
+}
+
+@station { name = "Temple",
+           circle = ["Embankment", "Blackfriars"],
+           district = ["Embankment", "Blackfriars"]
+}
+
+@station {
+    name = "Tottenham Court Road",
+    central = [ "Oxford Circus", "Holborn" ],
+    northern = [ "Goodge Street", "Leicester Square" ]
+}
+
+@station {
+  name = "Tower Hill",
+    circle = ["Aldgate", "Bank/Monument"],
+        district = ["Bank/Monument"] }
+
+	@station { name = "Vauxhall",
+		     victoria = [ "Stockwell", "Pimlico" ] }
+
+@station
+{ name = "Victoria"
+, circle = ["Sloane Square", "St. James's Park"]
+, district = ["Sloane Square", "St. James's Park"]
+, victoria = ["Green Park", "Pimlico"]
+}
+
+@station
+{ name = "Warren Street"
+, victoria = ["Oxford Circus", "Euston"]
+, northern = ["Goodge Street", "Euston"]
+}
+
+@station {
+        name    =       "Warwick Avenue",
+        bakerloo = ["Paddington", "Maida Vale"] }
+        
+
+@station {
+  name = "Wembley Park",
+  jubilee = ["Kingsbury", "Neasden"],
+  metropolitan = ["Finchley Road"]
+}
+
+@station {
+  name = "Westbourne Park",
+  city = ["Ladbroke Grove", "Royal Oak"]
+}
+
+@station 
+{ name = "Westminster"
+, circle = ["Embankment", "St. James's Park"]
+, district = ["Embankment", "St. James's Park"]
+, jubilee = ["Green Park"]
+}
+
+@station {
+        name    = "West Kensington",
+        district = [ "Barons Court", "Earl's Court" ] }
+
+@station {
+  name = "West Hampstead",
+  jubilee = ["Kilburn", "Finchley Road"]
+}
+
+@station { 
+  name = "Willesden Junction",
+  bakerloo = ["Kensal Green"]
+}
+
+@station {
+  name = "Willesden Green",
+  jubilee = ["Dollis Hill", "Kilburn"]
+}
